@@ -50,8 +50,8 @@ const RMCHospitalWebsite = () => {
             nameUrdu: "ڈاکٹر شاہد اقبال",
             titleEn: "General Surgeon & Family Physician",
             titleUrdu: "جنرل سرجن و فیملی فزیشن",
-            // specialtyEn: "ENT Specialist",
-            // specialtyUrdu: "خصوصی معالج ناک کان گلہ",
+            specialtyEn: "ENT Specialist",
+            specialtyUrdu: "خصوصی معالج ناک کان گلہ",
             detailsEn: [
                 { icon: <Award className="w-4 h-4" />, text: "MBBS - RMP" },
                 { icon: <Award className="w-4 h-4" />, text: "ENT Specialist" },

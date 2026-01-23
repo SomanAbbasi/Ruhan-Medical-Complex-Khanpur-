@@ -53,32 +53,64 @@ const RMCHospitalWebsite = () => {
             specialtyEn: "ENT Specialist",
             specialtyUrdu: "خصوصی معالج ناک کان گلہ",
             detailsEn: [
-                { icon: <Award className="w-4 h-4" />, text: "MBBS - RMP" },
                 { icon: <Award className="w-4 h-4" />, text: "ENT Specialist" },
-                { icon: <Building className="w-4 h-4" />, text: "Former Medical Officer, Sheikh Rahim Hospital, Rahim Yar Khan" },
-                { icon: <Building className="w-4 h-4" />, text: "Medical Superintendent, Tehsil Headquarters Hospital, Liaquat Pur" },
-                { icon: <Award className="w-4 h-4" />, text: "Certificate of Pathology from Royal College of Physicians (England)" }
+
+                { icon: <Award className="w-4 h-4" />, text: "MBBS - RMP" },
+                { icon: <Building className="w-4 h-4" />, text: "Deputy Medical Superintendent, Tehsil Headquarters Hospital, Liaquat Pur" },
+                { icon: <Building className="w-4 h-4" />, text: "Ex. Medical Officer, Sheikh Zayed Hospital, Rahim Yar Khan" },
+
+                { icon: <Award className="w-4 h-4" />, text: "Certificate of Hepatitis Management from Royal College of Physicians (England)" }
             ],
             detailsUrdu: [
-                { icon: <Award className="w-4 h-4" />, text: "ایم بی بی ایس - آرایم پی" },
                 { icon: <Award className="w-4 h-4" />, text: "خصوصی معالج ناک کان گلہ" },
-                { icon: <Building className="w-4 h-4" />, text: "سابق میڈیکل آفیسر شیخ رہے ہسپتال رحیم یارخان" },
-                { icon: <Building className="w-4 h-4" />, text: "اپنی میڈیکل سپر یان تحصیل ہیڈ کوارٹر ہسپتال لیاقت پور" },
-                { icon: <Award className="w-4 h-4" />, text: "مریکیٹ آف پا تائش میموٹ فرام رائل کالج آف فزیشن (انگلینہ)" }
+                { icon: <Award className="w-4 h-4" />, text: "ایم بی بی ایس - آرایم پی" },
+                { icon: <Building className="w-4 h-4" />, text: "ڈپٹی میڈیکل سپرنٹنڈنٹ، تحصیل ہیڈ کوارٹر ہسپتال، لیاقت پور" },
+
+                { icon: <Building className="w-4 h-4" />, text: "سابق میڈیکل آفیسر شیخ زید ہسپتال رحیم یار خان" },
+                { icon: <Award className="w-4 h-4" />, text: "رائل کالج آف فزیشنز (انگلینڈ) سے ہیپاٹائٹس مینجمنٹ کا سرٹیفکیٹ" }
             ],
             timings: [
-                { day: "Mon-Sat", dayUrdu: "پیر تا ہفتہ", morning: "9:00 AM - 12:00 PM", evening: "5:00 PM - 8:00 PM" },
-                { day: "Sun", dayUrdu: "اتوار", morning: "10:00 AM - 1:00 PM", evening: "Closed" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "06:00 PM - 09:00 PM" }
+                // { day: "Sun", dayUrdu: "اتوار", morning: "10:00 AM - 1:00 PM", evening: "Closed" }
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
             phones: ["0325-5576000", "068-5576000"],
-            image: "/img1.jpeg"
+            image: "/Shahid.jpg"
         },
+
         {
             id: 2,
-            nameEn: "Dr. Shumail Jaleel",
-            nameUrdu: "ڈاکٹر شمائل جلیل",
+            nameEn: "Dr. Muhammad Asad jamal",
+            nameUrdu: "ڈاکٹر محمد اسد جمال",
+            titleEn: "General and Laparoscopic Surgeon",
+            titleUrdu: "جنرل اینڈ لیپرو سکوپک سرجن",
+            specialtyEn: "General Surgeon",
+            specialtyUrdu: "جنرل سرجن",
+
+            detailsEn: [
+                { icon: <Award className="w-4 h-4" />, text: "MBBS - FCP (Surgery)" },
+                { icon: <Building className="w-4 h-4" />, text: "Former Registrar Sargodha Medical College Sargodha" }
+            ],
+            detailsUrdu: [
+                { icon: <Award className="w-4 h-4" />, text: " ایم بی بی ایس, ایف سی پی (سرجری)" },
+                { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار سرگودھا مڈیکل کالحج سرگودھا" }
+            ],
+            timings: [
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+
+            ],
+            facebook: "https://facebook.com",
+            whatsapp: "923255576000",
+            phones: ["0325-5576000", "068-5576000"],
+
+            image: "/Asad.jpeg"
+        },
+
+        {
+            id: 3,
+            nameEn: "Dr. Shumaila Jaleel",
+            nameUrdu: "ڈاکٹرشمائلہ جلیل",
             titleEn: "Pediatrician & Neonatologist",
             titleUrdu: "ماہر امراض بچگان و نوزائیدگان",
             specialtyEn: "Child Specialist",
@@ -91,11 +123,11 @@ const RMCHospitalWebsite = () => {
             detailsUrdu: [
                 { icon: <Award className="w-4 h-4" />, text: "ایم بی بی ایس نشتر میڈیکل کالج" },
                 { icon: <Award className="w-4 h-4" />, text: "ایف سی پی ایس (R) پیڈ ز میڈیسن" },
-                { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار چلڈرلنا وارڈ شیخ زید ہسپتال رحیم یارخان" }
+                { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار چلڈرن وارڈ شیخ زید ہسپتال رحیم یارخان" }
             ],
             timings: [
-                { day: "Mon-Fri", dayUrdu: "پیر تا جمعہ", morning: "10:00 AM - 1:00 PM", evening: "5:00 PM - 8:00 PM" },
-                { day: "Sat", dayUrdu: "ہفتہ", morning: "10:00 AM - 12:00 PM", evening: "Closed" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", morning: "01:00 PM - 07:00 PM" }
+
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
@@ -104,7 +136,7 @@ const RMCHospitalWebsite = () => {
             image: "/img1.jpeg"
         },
         {
-            id: 3,
+            id: 4,
             nameEn: "Dr. Muhammad Yasar Aslam",
             nameUrdu: "ڈاکٹر محمد یا سر اسلم",
             titleEn: "Consultant Physician",
@@ -117,12 +149,12 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "Former Registrar, Medicine Department, Sheikh Zayed Hospital, Rahim Yar Khan" }
             ],
             detailsUrdu: [
-                { icon: <Award className="w-4 h-4" />, text: "ایم بی بی ایس ( گولڈ میڈلسٹ ) ایف سی پی ایس (11) میڈیسن" },
+                { icon: <Award className="w-4 h-4" />, text: "ایم بی بی ایس ( گولڈ میڈلسٹ ) ایف سی پی ایس (2) میڈیسن" },
                 { icon: <Building className="w-4 h-4" />, text: "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور" },
-                { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار میڈلین از یپارٹمنٹ شیخ زید ہسپتال رحیم یارخان" }
+                { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار میڈسن ڈ یپارٹمنٹ شیخ زید ہسپتال رحیم یارخان" }
             ],
             timings: [
-                { day: "Mon-Sat", dayUrdu: "پیر تا ہفتہ", morning: "8:00 AM - 12:00 PM", evening: "4:00 PM - 7:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
@@ -149,7 +181,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور" }
             ],
             timings: [
-                { day: "Mon-Fri", dayUrdu: "پیر تا جمعہ", morning: "9:00 AM - 1:00 PM", evening: "5:00 PM - 8:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
@@ -190,11 +222,18 @@ const RMCHospitalWebsite = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center">
-                                <Stethoscope className="w-6 h-6 text-white" />
-                            </div>
+                            <div className="w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center"> 
+                                <Stethoscope className="w-6 h-6 text-white" /> </div>
+                            {/* <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center">
+                                <img
+                                    src="/logo-128.png"
+                                    alt="Ruhan Medical Complex"
+                                    className="w-7 h-7 md:w-8 md:h-8 object-contain"
+                                />
+                            </div> */}
+
                             <div>
-                                <h1 className="text-2xl font-bold text-gray-900">Rohan Medical Complex</h1>
+                                <h1 className="text-2xl font-bold text-gray-900">Ruhan Medical Complex</h1>
                                 <p className="text-sm text-gray-600" dir="rtl" style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>
                                     روحان میڈیکل کمپلیکس
                                 </p>
@@ -429,11 +468,11 @@ const RMCHospitalWebsite = () => {
                                                         </div>
                                                         <div className="space-y-2">
                                                             <div className="flex items-center justify-between">
-                                                                <span className="text-sm text-gray-500">Morning:</span>
+                                                                {/* <span className="text-sm text-gray-500">Morning:</span> */}
                                                                 <span className="font-semibold text-gray-900" dir="ltr">{timing.morning}</span>
                                                             </div>
                                                             <div className="flex items-center justify-between">
-                                                                <span className="text-sm text-gray-500">Evening:</span>
+                                                                {/* <span className="text-sm text-gray-500">Evening:</span> */}
                                                                 <span className="font-semibold text-gray-900" dir="ltr">{timing.evening}</span>
                                                             </div>
                                                         </div>
@@ -507,7 +546,7 @@ const RMCHospitalWebsite = () => {
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500">Address</p>
-                                            <p className="font-semibold text-gray-900">Behind DSP Office Road, Model Town B, Khanpur</p>
+                                            <p className="font-semibold text-gray-900">Behind DSP Office Link Road, Model Town B, Khanpur</p>
                                             <p className="text-gray-700">Khanpur, Pakistan</p>
                                         </div>
                                     </div>
@@ -564,7 +603,7 @@ const RMCHospitalWebsite = () => {
                                     <div className="flex items-start gap-4">
                                         <div>
                                             <p className="text-sm text-gray-500">پتہ</p>
-                                            <p className="font-semibold text-gray-900">عقب ڈی ایس پی آفس روڈ ماڈل ٹاؤن B خان پور</p>
+                                            <p className="font-semibold text-gray-900">عقب ڈی ایس پی آفس  لنک روڈ ماڈل ٹاؤن B خان پور</p>
                                             <p className="text-gray-700">خان پور، پاکستان</p>
                                         </div>
                                         <div className="p-3 bg-teal-50 rounded-xl">
@@ -605,7 +644,7 @@ const RMCHospitalWebsite = () => {
                                         Our hospital is conveniently located near Behind DSP Office Road, Model Town B, Khanpur
                                     </p>
                                     <a
-                                        href="https://maps.google.com"
+                                        href="https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-xl hover:shadow-lg transition-all duration-300 font-semibold"

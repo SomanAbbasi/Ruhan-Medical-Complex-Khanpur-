@@ -233,7 +233,7 @@ const RMCHospitalWebsite = () => {
                             </div> */}
 
                             <div>
-                                <h1 className="text-2xl font-bold text-gray-900">Ruhan Medical Complex</h1>
+                                <h1 className="text-2xl font-bold text-gray-900">Ruhan Medical And Surgical Complex</h1>
                                 <p className="text-sm text-gray-600" dir="rtl" style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>
                                     روحان میڈیکل کمپلیکس
                                 </p>

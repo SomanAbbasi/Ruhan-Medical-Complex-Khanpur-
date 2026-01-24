@@ -272,7 +272,7 @@ const RMCHospitalWebsite = () => {
                     <div className="text-center space-y-8">
                         <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
                             <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-                            <span className="text-teal-700 font-semibold">ESTABLISHED 2010</span>
+                            <span className="text-teal-700 font-semibold">ESTABLISHED 2025</span>
                             <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
                         </div>
 
@@ -641,7 +641,7 @@ const RMCHospitalWebsite = () => {
                                 <div className="p-6">
                                     <h4 className="text-lg font-bold text-gray-900 mb-4">Get Directions</h4>
                                     <p className="text-gray-700 mb-4">
-                                        Our hospital is conveniently located near Behind DSP Office Road, Model Town B, Khanpur
+                                        Our hospital is conveniently located near Behind DSP Office Link Road, Model Town B, Khanpur
                                     </p>
                                     <a
                                         href="https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA"
@@ -702,7 +702,7 @@ const RMCHospitalWebsite = () => {
                                 <h3 className="text-xl font-bold">Rohan Medical Complex</h3>
                             </div>
                             <p className="text-gray-400">
-                                Providing premium medical care with experienced doctors and modern facilities since 2010.
+                                Providing premium medical care with experienced doctors and modern facilities since 2025.
                             </p>
                         </div>
 

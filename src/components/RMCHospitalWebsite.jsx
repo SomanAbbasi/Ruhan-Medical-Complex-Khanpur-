@@ -222,7 +222,7 @@ const RMCHospitalWebsite = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center"> 
+                            <div className="w-12 h-12 bg-gradient-to-br from-teal-600 to-teal-800 rounded-full flex items-center justify-center">
                                 <Stethoscope className="w-6 h-6 text-white" /> </div>
                             {/* <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md flex items-center justify-center">
                                 <img
@@ -276,6 +276,64 @@ const RMCHospitalWebsite = () => {
                             <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
                         </div>
 
+                        {/* Hospital Image Section */}
+                        <div className="max-w-4xl mx-auto">
+                            <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                                <img
+                                    src="/rohanmedical.jpeg"
+                                    alt="Ruhan Medical Complex Hospital"
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center">
+                                    <p className="text-sm md:text-base font-medium">Ruhan Medical Complex</p>
+                                    <p className="text-xs md:text-sm opacity-90" style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>روضان میلڈیکل کیمپلیکس</p>
+                                </div> */}
+                            </div>
+
+                            {/* Address Section */}
+                            <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200/50">
+                                <div className="flex items-center justify-center gap-2 mb-4">
+                                    <MapPin className="w-5 h-5 text-teal-600" />
+                                    <h3 className="text-lg font-semibold text-gray-800">Our Location</h3>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <div className="text-center">
+                                        <p className="text-gray-700 font-medium">
+                                            Behind DSP Office Link Road, Model Town B, Khanpur
+                                        </p>
+                                        <p className="text-gray-600 text-sm mt-1">Khanpur, Pakistan</p>
+                                    </div>
+
+                                    <div className="text-center">
+                                        <p className="text-gray-700 font-medium" dir="rtl" style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>
+                                            ڈی ایس پی آفس کے پیچھے لنک روڈ، ماڈل ٹاؤن بی، خان پور
+                                        </p>
+                                        <p className="text-gray-600 text-sm mt-1" dir="rtl" style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>
+                                            خان پور، پاکستان
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 flex justify-center">
+                                    <a
+                                        href="https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium text-sm"
+                                    >
+                                        <MapPin className="w-4 h-4" />
+                                        <span>View on Google Maps</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                             Premium Medical Care
                             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
@@ -327,7 +385,6 @@ const RMCHospitalWebsite = () => {
                                     <p className="text-sm text-gray-500">Call Now</p>
                                     <p className="font-semibold text-gray-800" dir="ltr">068-5576000</p>
                                     <p className="font-semibold text-gray-800" dir="ltr">0325-5576000</p>
-
                                 </div>
                             </div>
 

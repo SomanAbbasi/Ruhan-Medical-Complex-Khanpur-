@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import {
     MapPin,
@@ -70,7 +72,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Award className="w-4 h-4" />, text: "رائل کالج آف فزیشنز (انگلینڈ) سے ہیپاٹائٹس مینجمنٹ کا سرٹیفکیٹ" }
             ],
             timings: [
-                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "06:00 PM - 09:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "06:00 PM - 09:00 PM", morning: "" }
                 // { day: "Sun", dayUrdu: "اتوار", morning: "10:00 AM - 1:00 PM", evening: "Closed" }
             ],
             facebook: "https://facebook.com",
@@ -97,7 +99,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار سرگودھا مڈیکل کالحج سرگودھا" }
             ],
             timings: [
-                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM", morning: "" }
 
             ],
             facebook: "https://facebook.com",
@@ -126,7 +128,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار چلڈرن وارڈ شیخ زید ہسپتال رحیم یارخان" }
             ],
             timings: [
-                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", morning: "01:00 PM - 07:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", morning: "01:00 PM - 07:00 PM", evening: "" }
 
             ],
             facebook: "https://facebook.com",
@@ -154,7 +156,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "سابق رجسٹرار میڈسن ڈ یپارٹمنٹ شیخ زید ہسپتال رحیم یارخان" }
             ],
             timings: [
-                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM", morning: "" }
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
@@ -163,7 +165,7 @@ const RMCHospitalWebsite = () => {
             image: "/img1.jpeg"
         },
         {
-            id: 4,
+            id: 5,
             nameEn: "Dr. Muhammad Faisal Rafiq",
             nameUrdu: "ڈاکٹر محمد فیصل رفیق",
             titleEn: "Radiologist & Ultrasound Specialist",
@@ -181,7 +183,7 @@ const RMCHospitalWebsite = () => {
                 { icon: <Building className="w-4 h-4" />, text: "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور" }
             ],
             timings: [
-                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+                { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM", morning: "" }
             ],
             facebook: "https://facebook.com",
             whatsapp: "923255576000",
@@ -284,8 +286,8 @@ const RMCHospitalWebsite = () => {
                                     alt="Ruhan Medical Complex Hospital"
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+                                        e.currentTarget.onerror = null;
+                                        e.currentTarget.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
                                     }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -439,8 +441,8 @@ const RMCHospitalWebsite = () => {
                                                     alt={doctor.nameEn}
                                                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                                                     onError={(e) => {
-                                                        e.target.onerror = null;
-                                                        e.target.src = `https://ui-avatars.com/api/?name=${doctor.nameEn.replace(' ', '+')}&background=0ea5e9&color=fff&size=200&bold=true`;
+                                                        e.currentTarget.onerror = null;
+                                                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${doctor.nameEn.replace(' ', '+')}&background=0ea5e9&color=fff&size=200&bold=true`;
                                                     }}
                                                 />
                                             </div>
@@ -524,14 +526,14 @@ const RMCHospitalWebsite = () => {
                                                             </span>
                                                         </div>
                                                         <div className="space-y-2">
-                                                            <div className="flex items-center justify-between">
+                                                            {timing.morning !== "" && (<div className="flex items-center justify-between">
                                                                 {/* <span className="text-sm text-gray-500">Morning:</span> */}
                                                                 <span className="font-semibold text-gray-900" dir="ltr">{timing.morning}</span>
-                                                            </div>
-                                                            <div className="flex items-center justify-between">
+                                                            </div>)}
+                                                            {timing.evening !== "" && (<div className="flex items-center justify-between">
                                                                 {/* <span className="text-sm text-gray-500">Evening:</span> */}
                                                                 <span className="font-semibold text-gray-900" dir="ltr">{timing.evening}</span>
-                                                            </div>
+                                                            </div>)}
                                                         </div>
                                                     </div>
                                                 ))}

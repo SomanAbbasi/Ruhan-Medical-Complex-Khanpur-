@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   distDir: 'dist',
   images: {
     unoptimized: true,
@@ -11,7 +10,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Disable static optimization for debugging
   staticPageGenerationTimeout: 1000,
 };
 

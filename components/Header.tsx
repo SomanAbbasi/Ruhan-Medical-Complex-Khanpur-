@@ -11,7 +11,9 @@ export function Header() {
               <Stethoscope className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Ruhan Medical And Surgical Complex</h1>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Ruhan Medical And Surgical Complex
+              </h1>
               <p className="text-sm text-gray-600 font-urdu" dir="rtl">
                 روحان میڈیکل اینڈ سرجیکل کمپلیکس
               </p>
@@ -19,24 +21,27 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6" aria-label="Main Navigation">
-            <Link 
-              href="/doctors" 
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
+            >
+              Home
+            </Link>
+
+            <Link
+              href="/doctors"
               className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
             >
               Doctors
             </Link>
-            <Link 
-              href="/contact" 
+
+            <Link
+              href="/contact"
               className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
             >
               Contact
             </Link>
-            {/* <Link 
-              href="/about" 
-              className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
-            >
-              About
-            </Link> */}
+
             <a
               href="https://wa.me/923255576000"
               className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"

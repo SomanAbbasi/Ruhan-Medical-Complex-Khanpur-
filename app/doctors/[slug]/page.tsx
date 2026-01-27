@@ -5,12 +5,9 @@ import Link from "next/link";
 import { Award, Clock, Calendar, Phone, MessageCircle, Facebook, ArrowLeft } from "lucide-react";
 import { doctors, hospitalInfo } from "@/data/doctors";
 
-// REQUIRED for Next.js 15 static export with dynamic routes
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
-// THIS FUNCTION IS MANDATORY for output: 'export'
-// It tells Next.js which pages to generate at build time
 export function generateStaticParams() {
   return doctors.map((doctor) => ({
     slug: doctor.slug,

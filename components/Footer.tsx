@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heart, Facebook, MessageCircle, Phone, MapPin } from "lucide-react";
+import { Heart, Facebook, MessageCircle, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import { hospitalInfo } from "@/data/doctors";
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
               <h3 className="text-xl font-bold">Rohan Medical Complex</h3>
             </div>
             <p className="text-gray-400">
-              Providing premium medical care with experienced doctors and modern facilities since 2010.
+              Providing premium health care with experienced doctors and modern facilities since 2025.
             </p>
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <MapPin className="w-4 h-4" />
@@ -32,9 +32,7 @@ export function Footer() {
               <Link href="/contact" className="block text-gray-400 hover:text-white transition-colors">
                 Contact Information
               </Link>
-              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors">
-                About Us
-              </Link>
+              
             </nav>
           </div>
 
@@ -61,30 +59,24 @@ export function Footer() {
 
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com"
+                href="https://github.com/SomanAbbasi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors duration-300"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Github className="w-5 h-5" />
               </a>
               <a
-                href={`https://wa.me/${hospitalInfo.emergencyPhone}`}
+                href="https://www.linkedin.com/in/soman-abbasi-a1820b344/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-300"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href={`tel:${hospitalInfo.emergencyPhone}`}
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors duration-300"
-                aria-label="Phone"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
+            
             </div>
 
             <div className="text-center">

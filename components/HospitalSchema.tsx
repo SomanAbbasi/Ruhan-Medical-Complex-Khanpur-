@@ -49,10 +49,10 @@ export function HospitalSchema() {
       "Radiology",
       "Internal Medicine"
     ],
-    hasMap: "https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA",
+    hasMap: "https://maps.app.goo.gl/53x5ovMu825bDFjf7",
     isAcceptingNewPatients: true,
     sameAs: [
-      "https://facebook.com"
+      "https://www.facebook.com/share/1F3gxqsmP8/"
     ]
   };
 

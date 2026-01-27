@@ -28,7 +28,7 @@ export default function ContactPage() {
             Contact & Location
           </h1>
           <p className="text-xl text-gray-600">
-            Visit Ruhan Medical Complex or reach us 24/7 for emergencies
+            Visit Ruhan Medical And Surgical Complex or reach us 24/7 for emergencies
           </p>
           <p className="text-xl text-gray-600 font-urdu" dir="rtl">
             رابطہ کریں
@@ -82,21 +82,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Working Hours</h3>
                     <p className="text-gray-600 mt-1">24 Hours Emergency Services</p>
-                    <p className="text-sm text-gray-500">OPD: Morning & Evening shifts</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-teal-50 rounded-xl">
-                    <Mail className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <a href={`mailto:${hospitalInfo.email}`} className="text-teal-600 hover:text-teal-700">
-                      {hospitalInfo.email}
-                    </a>
-                  </div>
-                </div>
+                
               </div>
 
               <div className="mt-8 pt-8 border-t border-gray-200">
@@ -164,7 +153,7 @@ export default function ContactPage() {
               </div>
               <div className="p-6">
                 <a
-                  href="https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA"
+                  href="https://maps.app.goo.gl/53x5ovMu825bDFjf7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
@@ -177,7 +166,7 @@ export default function ContactPage() {
             <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-3xl p-8 border border-teal-100">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Emergency Services</h3>
               <p className="text-gray-700 mb-4">
-                We provide 24/7 emergency services including trauma care, cardiac emergencies, pediatric emergencies, and ambulance services.
+                We provide 24/7 emergency services including ERT, Ultrasound, Operation theaters, and ambulance services.
               </p>
               <div className="flex items-center gap-2 text-teal-700 font-semibold">
                 <Clock className="w-5 h-5" />

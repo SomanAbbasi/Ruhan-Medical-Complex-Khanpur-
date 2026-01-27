@@ -60,9 +60,7 @@ export function generateSEOMetadata({
       description: description,
       images: [ogImage],
     },
-    verification: {
-      google: "YOUR_GOOGLE_VERIFICATION_CODE", // Add your verification code
-    },
+  
     robots: {
       index: true,
       follow: true,

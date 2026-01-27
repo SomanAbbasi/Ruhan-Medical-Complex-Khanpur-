@@ -20,7 +20,6 @@ export interface Doctor {
   phones: string[];
   image: string;
   qualifications: string[];
-  experience: string;
 }
 
 export const doctors: Doctor[] = [
@@ -48,14 +47,13 @@ export const doctors: Doctor[] = [
       "رائل کالج آف فزیشنز (انگلینڈ) سے ہیپاٹائٹس مینجمنٹ کا سرٹیفکیٹ"
     ],
     timings: [
-      { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "06:00 PM - 09:00 PM" }
+      { day: "Daily", dayUrdu: "روزانہ", evening: "06:00 PM - 09:00 PM" }
     ],
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1F3gxqsmP8/",
     whatsapp: "923255576000",
     phones: ["0325-5576000", "068-5576000"],
     image: "/doctors/shahid.jpg",
-    qualifications: ["MBBS", "RMP", "ENT Specialist"],
-    experience: "15+ years"
+    qualifications: ["MBBS", "RMP", "ENT Specialist"]
   },
   {
     id: 2,
@@ -75,14 +73,13 @@ export const doctors: Doctor[] = [
       "سابق رجسٹرار سرگودھا مڈیکل کالج سرگودھا"
     ],
     timings: [
-      { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+      { day: "Daily", dayUrdu: "روزانہ", evening: "05:00 PM - 08:00 PM" }
     ],
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1F3gxqsmP8/",
     whatsapp: "923255576000",
     phones: ["0325-5576000", "068-5576000"],
     image: "/doctors/asad.jpg",
-    qualifications: ["MBBS", "FCP (Surgery)"],
-    experience: "10+ years"
+    qualifications: ["MBBS", "FCP (Surgery)"]
   },
   {
     id: 3,
@@ -100,50 +97,48 @@ export const doctors: Doctor[] = [
     ],
     detailsUrdu: [
       "ایم بی بی ایس نشتر میڈیکل کالج",
-      "ایف سی پی ایس (R) پیڈ ز میڈیسن",
+      "ایف سی پی ایس  (R)  پیڈ ز میڈیسن",
       "سابق رجسٹرار چلڈرن وارڈ شیخ زید ہسپتال رحیم یارخان"
     ],
     timings: [
-      { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", morning: "01:00 PM - 07:00 PM" }
+      { day: "Daily", dayUrdu: "روزانہ", morning: "01:00 PM - 07:00 PM" }
     ],
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1F3gxqsmP8/",
     whatsapp: "923255576000",
     phones: ["0325-5576000", "068-5576000"],
     image: "/doctors/shumaila.jpg",
-    qualifications: ["MBBS", "FCPS (R) Pediatrics"],
-    experience: "8+ years"
+    qualifications: ["MBBS", "FCPS (R) Pediatrics"]
   },
+  // {
+  //   id: 4,
+  //   slug: "dr-muhammad-yasar-aslam",
+  //   nameEn: "Dr. Muhammad Yasar Aslam",
+  //   nameUrdu: "ڈاکٹر محمد یا سر اسلم",
+  //   titleEn: "Consultant Physician",
+  //   titleUrdu: "کنسلٹنٹ فزیشن",
+  //   specialtyEn: "General Medicine",
+  //   specialtyUrdu: "جنرل میڈیسن",
+  //   detailsEn: [
+  //     "MBBS (Gold Medalist), FCPS (II) Medicine",
+  //     "Medical Officer, Tehsil Headquarters Hospital, Khanpur",
+  //     "Former Registrar, Medicine Department, Sheikh Zayed Hospital, Rahim Yar Khan"
+  //   ],
+  //   detailsUrdu: [
+  //     "ایم بی بی ایس ( گولڈ میڈلسٹ ) ایف سی پی ایس (2) میڈیسن",
+  //     "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور",
+  //     "سابق رجسٹرار میڈسن ڈ یپارٹمنٹ شیخ زید ہسپتال رحیم یارخان"
+  //   ],
+  //   timings: [
+  //     { day: "Daily", dayUrdu: "روزانہ", evening: "05:00 PM - 08:00 PM" }
+  //   ],
+  //   facebook: "https://www.facebook.com/share/1F3gxqsmP8/",
+  //   whatsapp: "923255576000",
+  //   phones: ["0325-5576000", "068-5576000"],
+  //   image: "/doctors/yasar.jpg",
+  //   qualifications: ["MBBS (Gold Medalist)", "FCPS (II) Medicine"]
+  // },
   {
     id: 4,
-    slug: "dr-muhammad-yasar-aslam",
-    nameEn: "Dr. Muhammad Yasar Aslam",
-    nameUrdu: "ڈاکٹر محمد یا سر اسلم",
-    titleEn: "Consultant Physician",
-    titleUrdu: "کنسلٹنٹ فزیشن",
-    specialtyEn: "General Medicine",
-    specialtyUrdu: "جنرل میڈیسن",
-    detailsEn: [
-      "MBBS (Gold Medalist), FCPS (II) Medicine",
-      "Medical Officer, Tehsil Headquarters Hospital, Khanpur",
-      "Former Registrar, Medicine Department, Sheikh Zayed Hospital, Rahim Yar Khan"
-    ],
-    detailsUrdu: [
-      "ایم بی بی ایس ( گولڈ میڈلسٹ ) ایف سی پی ایس (2) میڈیسن",
-      "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور",
-      "سابق رجسٹرار میڈسن ڈ یپارٹمنٹ شیخ زید ہسپتال رحیم یارخان"
-    ],
-    timings: [
-      { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
-    ],
-    facebook: "https://facebook.com",
-    whatsapp: "923255576000",
-    phones: ["0325-5576000", "068-5576000"],
-    image: "/doctors/yasar.jpg",
-    qualifications: ["MBBS (Gold Medalist)", "FCPS (II) Medicine"],
-    experience: "12+ years"
-  },
-  {
-    id: 5,
     slug: "dr-muhammad-faisal-rafiq",
     nameEn: "Dr. Muhammad Faisal Rafiq",
     nameUrdu: "ڈاکٹر محمد فیصل رفیق",
@@ -162,14 +157,13 @@ export const doctors: Doctor[] = [
       "میڈیکل آفیسر تحصیل ہیڈ کوارٹر ہسپتال خان پور"
     ],
     timings: [
-      { day: "Monday-Sunday", dayUrdu: "پیر سے اتوار", evening: "05:00 PM - 08:00 PM" }
+      { day: "Daily", dayUrdu: "روزانہ", evening: "05:00 PM - 08:00 PM" }
     ],
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1F3gxqsmP8/",
     whatsapp: "923255576000",
     phones: ["0325-5576003", "0325-5576004"],
     image: "/doctors/faisal.jpg",
-    qualifications: ["MBBS (KEMU)", "FCPS (R) Radiology"],
-    experience: "6+ years"
+    qualifications: ["MBBS (KEMU)", "FCPS (R) Radiology"]
   }
 ];
 
@@ -179,8 +173,7 @@ export const hospitalInfo = {
   address: "Behind DSP Office Link Road, Model Town B, Khanpur, Rahim Yar Khan, Pakistan",
   phone: ["0325-5576000", "068-5576000"],
   emergencyPhone: "0325-5576000",
-  email: "info@ruhanmedical.com",
-  established: "2010",
+  established: "2025",
   coordinates: {
     lat: 28.6500,
     lng: 70.6500
@@ -188,10 +181,11 @@ export const hospitalInfo = {
   businessHours: "24/7",
   services: [
     "Emergency Ward",
-    "ICU Facilities",
-    "Lab Services",
+    "Operation Theaters",
+    "Ultrasound",
+    "General Ward",
     "Pharmacy",
+    "Lab Services",
     "Ambulance",
-    "X-Ray & Ultrasound"
   ]
 };

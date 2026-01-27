@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p className="text-gray-700 leading-relaxed">
-              Established in 2010, Ruhan Medical Complex has been a cornerstone of healthcare in Khanpur, 
+              Established in 2025, Ruhan Medical Complex has been a cornerstone of healthcare in Khanpur, 
               Rahim Yar Khan. Located strategically at Model Town B, behind the DSP Office, we have served 
               thousands of patients with dedication and excellence.
             </p>

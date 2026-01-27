@@ -1,8 +1,11 @@
 import { MetadataRoute } from "next";
 import { doctors } from "@/data/doctors";
 
+// REQUIRED for Next.js 15 with output: 'export'
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ruhanmedical.com";
+  const baseUrl = "https://ruhanmedicalcomplex.com";
   
   const routes = [
     {

@@ -1,7 +1,5 @@
 
-export default function Contact() {
-  return <h1 className="p-6 text-2xl">Contact Us</h1>;
-}
+
 import { Metadata } from "next";
 import { MapPin, Phone, Clock, MessageCircle, Navigation, Mail } from "lucide-react";
 import { hospitalInfo } from "@/data/doctors";

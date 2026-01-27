@@ -124,7 +124,7 @@ export default function ContactPage() {
               </div>
               <div className="p-6">
                 <a
-                  href="https://maps.app.goo.gl/RUi7aAsNgyuEH4RbA"
+                  href="https://maps.app.goo.gl/zrMCEF1kYpYUzc3F6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"

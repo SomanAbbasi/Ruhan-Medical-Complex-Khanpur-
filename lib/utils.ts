@@ -1,7 +1,3 @@
-
-export function slugify(text: string) {
-  return text.toLowerCase().replace(/\s+/g, "-");
-}
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 

@@ -1,151 +1,228 @@
-
-
 import { Metadata } from "next";
-import { MapPin, Phone, Clock, MessageCircle, Navigation, Mail } from "lucide-react";
-import { hospitalInfo } from "@/data/doctors";
-import { generateSEOMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { 
+  Award, 
+  Clock, 
+  Calendar,
+  Phone, 
+  MessageCircle, 
+  Facebook,
+  ArrowLeft
+} from "lucide-react";
+import { doctors, hospitalInfo } from "@/data/doctors";
+import { DoctorSchema } from "@/components/DoctorSchema";
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: "Contact Us | 24/7 Emergency Hospital in Khanpur",
-  description: "Contact Ruhan Medical Complex Khanpur. Emergency: 0325-5576000. Located at Model Town B, Khanpur. Open 24/7 for all medical emergencies and consultations.",
-  path: "/contact",
-  keywords: ["hospital contact khanpur", "emergency hospital khanpur", "medical complex rahim yar khan phone"]
-});
+// Use 'type' instead of 'interface' and avoid conflicting with PageProps
+type PageParams = {
+  params: {
+    slug: string;
+  };
+};
 
-export default function ContactPage() {
+export async function generateStaticParams() {
+  return doctors.map((doctor) => ({
+    slug: doctor.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const doctor = doctors.find((d) => d.slug === params.slug);
+  
+  if (!doctor) {
+    return {
+      title: "Doctor Not Found | Ruhan Medical Complex",
+    };
+  }
+
+  return {
+    title: `${doctor.nameEn} | ${doctor.specialtyEn} in Khanpur | Ruhan Medical Complex`,
+    description: `Book appointment with ${doctor.nameEn}, ${doctor.titleEn} at Ruhan Medical Complex Khanpur. ${doctor.specialtyEn} specialist in Rahim Yar Khan. Contact: ${doctor.phones[0]}`,
+  };
+}
+
+export default function DoctorPage({ params }: PageParams) {
+  const doctor = doctors.find((d) => d.slug === params.slug);
+
+  if (!doctor) {
+    notFound();
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <DoctorSchema doctor={doctor} />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Contact & Location
-          </h1>
-          <p className="text-xl text-gray-600">
-            Visit Ruhan Medical Complex or reach us 24/7 for emergencies
-          </p>
-          <p className="text-xl text-gray-600 font-urdu" dir="rtl">
-            رابطہ کریں
-          </p>
-        </div>
+        <Link 
+          href="/doctors" 
+          className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-semibold mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to All Doctors
+        </Link>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Hospital Information</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-teal-50 rounded-xl">
-                    <MapPin className="w-6 h-6 text-teal-600" />
+        <article className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
+          {/* Content remains the same as before */}
+          <div className="grid md:grid-cols-5 gap-8 p-8">
+            {/* Doctor Photo */}
+            <div className="md:col-span-1 flex justify-center md:justify-start">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-blue-400/20 rounded-full blur-xl"></div>
+                <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                  <Image
+                    src={doctor.image}
+                    alt={`${doctor.nameEn} - ${doctor.specialtyEn} in Khanpur, Rahim Yar Khan`}
+                    fill
+                    className="object-cover"
+                    sizes="200px"
+                    priority
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                  {doctor.specialtyEn}
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-4 space-y-8">
+              {/* Header */}
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h1 className="text-3xl font-bold text-gray-900">{doctor.nameEn}</h1>
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-50 to-blue-50 px-4 py-2 rounded-full">
+                    <Award className="w-4 h-4 text-teal-600" />
+                    <span className="font-semibold text-teal-700">{doctor.titleEn}</span>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Address</h3>
-                    <address className="not-italic text-gray-600 mt-1">
-                      {hospitalInfo.address}
-                    </address>
+
+                  <div className="space-y-3 pt-4">
+                    {doctor.detailsEn.map((detail, idx) => (
+                      <div key={idx} className="flex items-start gap-3 group">
+                        <div className="p-2 bg-teal-50 rounded-lg group-hover:bg-teal-100 transition-colors duration-300 flex-shrink-0">
+                          <Award className="w-4 h-4 text-teal-600" />
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">{detail}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-teal-50 rounded-xl">
-                    <Phone className="w-6 h-6 text-teal-600" />
+                <div className="space-y-4 font-urdu" dir="rtl">
+                  <h2 className="text-3xl font-bold text-gray-900">{doctor.nameUrdu}</h2>
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-teal-50 px-4 py-2 rounded-full justify-end">
+                    <span className="font-semibold text-blue-700">{doctor.titleUrdu}</span>
+                    <Award className="w-4 h-4 text-blue-600" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Phone Numbers</h3>
-                    <div className="space-y-2 mt-1">
-                      {hospitalInfo.phone.map((phone) => (
-                        <a 
-                          key={phone}
-                          href={`tel:${phone}`} 
-                          className="block text-teal-600 font-semibold hover:text-teal-700"
-                          dir="ltr"
-                        >
-                          {phone}
-                        </a>
-                      ))}
-                    </div>
+
+                  <div className="space-y-3 pt-4">
+                    {doctor.detailsUrdu.map((detail, idx) => (
+                      <div key={idx} className="flex items-start gap-3 group justify-end">
+                        <p className="text-gray-700 leading-relaxed text-right">{detail}</p>
+                        <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors duration-300 flex-shrink-0">
+                          <Award className="w-4 h-4 text-blue-600" />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-teal-50 rounded-xl">
+              {/* Timings */}
+              <div className="bg-gradient-to-r from-gray-50 to-teal-50 rounded-2xl p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-white rounded-lg shadow-sm">
                     <Clock className="w-6 h-6 text-teal-600" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Working Hours</h3>
-                    <p className="text-gray-600 mt-1">24 Hours Emergency Services</p>
-                    <p className="text-sm text-gray-500">OPD: Morning & Evening shifts</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Consultation Timings</h3>
+                  <span className="text-gray-300">|</span>
+                  <h3 className="text-xl font-bold text-gray-900 font-urdu" dir="rtl">
+                    وقت ملاقات
+                  </h3>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-teal-50 rounded-xl">
-                    <Mail className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <a href={`mailto:${hospitalInfo.email}`} className="text-teal-600 hover:text-teal-700">
-                      {hospitalInfo.email}
-                    </a>
-                  </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {doctor.timings.map((timing, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white p-4 rounded-xl border border-gray-200 hover:border-teal-300 transition-colors duration-300"
+                    >
+                      <div className="flex items-center gap-2 mb-3">
+                        <Calendar className="w-4 h-4 text-teal-500" />
+                        <span className="font-semibold text-gray-800">{timing.day}</span>
+                        <span className="text-gray-300">•</span>
+                        <span className="font-semibold text-gray-800 font-urdu">
+                          {timing.dayUrdu}
+                        </span>
+                      </div>
+                      <div className="space-y-2">
+                        {timing.morning && (
+                          <div className="flex items-center justify-between">
+                            <span className="font-semibold text-gray-900" dir="ltr">{timing.morning}</span>
+                            <span className="text-sm text-gray-500">Morning</span>
+                          </div>
+                        )}
+                        {timing.evening && (
+                          <div className="flex items-center justify-between">
+                            <span className="font-semibold text-gray-900" dir="ltr">{timing.evening}</span>
+                            <span className="text-sm text-gray-500">Evening</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="font-semibold text-gray-900 mb-4">Quick Connect</h3>
-                <div className="flex gap-4">
-                  <a
-                    href={`https://wa.me/${hospitalInfo.emergencyPhone}`}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors font-semibold"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    WhatsApp
-                  </a>
-                  <a
-                    href={`tel:${hospitalInfo.emergencyPhone}`}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-colors font-semibold"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Emergency
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-              <div className="aspect-video bg-gradient-to-br from-teal-50 to-blue-50 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Navigation className="w-16 h-16 text-teal-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900">Google Maps</h3>
-                  <p className="text-gray-600 mt-2">Model Town B, Khanpur</p>
-                </div>
-              </div>
-              <div className="p-6">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="https://maps.app.goo.gl/zrMCEF1kYpYUzc3F6"
+                  href={`https://wa.me/${doctor.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+                  className="group flex-1 min-w-[200px] flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:shadow-xl font-semibold"
                 >
-                  Get Directions on Google Maps
+                  <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>WhatsApp Consultation</span>
                 </a>
-              </div>
-            </div>
 
-            <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-3xl p-8 border border-teal-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Emergency Services</h3>
-              <p className="text-gray-700 mb-4">
-                We provide 24/7 emergency services including trauma care, cardiac emergencies, pediatric emergencies, and ambulance services.
-              </p>
-              <div className="flex items-center gap-2 text-teal-700 font-semibold">
-                <Clock className="w-5 h-5" />
-                <span>Always Open - 24/7/365</span>
+                <a
+                  href={doctor.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex-1 min-w-[200px] flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:shadow-xl font-semibold"
+                >
+                  <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Follow on Facebook</span>
+                </a>
+
+                {doctor.phones.map((phone, idx) => (
+                  <a
+                    key={idx}
+                    href={`tel:${phone}`}
+                    className="group flex-1 min-w-[200px] flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-xl hover:from-teal-700 hover:to-blue-700 transition-all duration-300 hover:shadow-xl font-semibold"
+                  >
+                    <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                    <span dir="ltr">{phone}</span>
+                  </a>
+                ))}
+              </div>
+
+              {/* Location Box */}
+              <div className="bg-teal-50 rounded-2xl p-6 border border-teal-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Practice Location</h3>
+                <p className="text-gray-700 mb-4">
+                  {doctor.nameEn} practices at <strong>Ruhan Medical Complex</strong>, located at {hospitalInfo.address}.
+                </p>
+                <Link 
+                  href="/contact"
+                  className="text-teal-600 font-semibold hover:text-teal-700 inline-flex items-center gap-2"
+                >
+                  Get Directions →
+                </Link>
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Award, Phone, MessageCircle, Navigation, Stethoscope } from "lucide-react";
+import { Award, Phone, MessageCircle,  Stethoscope } from "lucide-react";
 import { doctors } from "@/data/doctors";
 import { generateSEOMetadata } from "@/lib/seo";
 

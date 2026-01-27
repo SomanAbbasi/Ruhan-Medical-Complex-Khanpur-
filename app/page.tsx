@@ -8,15 +8,12 @@ import {
   MessageCircle, 
   Award, 
   Stethoscope, 
-  Building, 
   Heart, 
   Shield, 
   Users, 
   Star, 
   PhoneCall,
   Navigation,
-  Facebook,
-  Calendar
 } from "lucide-react";
 import { doctors, hospitalInfo } from "@/data/doctors";
 import { FeatureGrid } from "@/components/FeatureGrid";

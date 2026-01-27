@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { 
   Award, 
-  Building, 
   Clock, 
   Calendar,
   Phone, 
@@ -15,14 +14,21 @@ import {
 import { doctors, hospitalInfo } from "@/data/doctors";
 import { DoctorSchema } from "@/components/DoctorSchema";
 
+// Next.js 15: params is a Promise
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   return doctors.map((doctor) => ({
     slug: doctor.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const doctor = doctors.find((d) => d.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // Await params in Next.js 15
+  const { slug } = await params;
+  const doctor = doctors.find((d) => d.slug === slug);
   
   if (!doctor) {
     return {
@@ -30,43 +36,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  const title = `${doctor.nameEn} | ${doctor.specialtyEn} in Khanpur | Ruhan Medical Complex`;
-  const description = `Book appointment with ${doctor.nameEn}, ${doctor.titleEn} at Ruhan Medical Complex Khanpur. ${doctor.specialtyEn} specialist in Rahim Yar Khan. Contact: ${doctor.phones[0]}`;
-
   return {
-    title: title,
-    description: description,
-    keywords: [
-      doctor.nameEn,
-      doctor.specialtyEn,
-      `${doctor.specialtyEn} khanpur`,
-      `${doctor.specialtyEn} rahim yar khan`,
-      "doctor khanpur",
-      "hospital khanpur",
-      doctor.nameUrdu
-    ],
-    alternates: {
-      canonical: `https://ruhanmedical.com/doctors/${doctor.slug}`,
-    },
-    openGraph: {
-      title: title,
-      description: description,
-      url: `https://ruhanmedical.com/doctors/${doctor.slug}`,
-      type: "profile",
-      images: [
-        {
-          url: `https://ruhanmedical.com${doctor.image}`,
-          width: 800,
-          height: 600,
-          alt: doctor.nameEn,
-        },
-      ],
-    },
+    title: `${doctor.nameEn} | ${doctor.specialtyEn} in Khanpur | Ruhan Medical Complex`,
+    description: `Book appointment with ${doctor.nameEn}, ${doctor.titleEn} at Ruhan Medical Complex Khanpur. ${doctor.specialtyEn} specialist in Rahim Yar Khan. Contact: ${doctor.phones[0]}`,
   };
 }
 
-export default function DoctorPage({ params }: { params: { slug: string } }) {
-  const doctor = doctors.find((d) => d.slug === params.slug);
+// Must be async in Next.js 15 to await params
+export default async function DoctorPage({ params }: Props) {
+  // Await the params Promise
+  const { slug } = await params;
+  const doctor = doctors.find((d) => d.slug === slug);
 
   if (!doctor) {
     notFound();

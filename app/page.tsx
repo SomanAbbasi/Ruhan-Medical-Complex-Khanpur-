@@ -35,7 +35,7 @@ const features = [
   { icon: Heart, title: "24/7 Emergency", urdu: "24/7 ایمرجنسی" },
   { icon: Users, title: "Multiple Specialties", urdu: "کئی اسپیشلٹیز" },
   { icon: Award, title: "Experienced Staff", urdu: "تجربہ کار عملہ" },
-  { icon: Star, title: "Premium Care", urdu: "پریمیم دیکھ بھال" }
+  { icon: Star, title: "Health Care", urdu: "پریمیم دیکھ بھال" }
 ];
 
 export default function HomePage() {

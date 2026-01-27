@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+  
+  .font-urdu {
+    font-family: var(--font-urdu), "Noto Nastaliq Urdu", serif;
+  }
+}

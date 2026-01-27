@@ -1,19 +1,48 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter, Noto_Nastaliq_Urdu } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { EmergencyBar } from "@/components/EmergencyBar";
+import { HospitalSchema } from "@/components/HospitalSchema";
+import { generateSEOMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: 'Rohan Medical Complex - Khanpur',
-    description: 'Premium Medical Care With Expert Doctors - Ruhan Medical And Surgical Complex, Khanpur',
-}
+const inter = Inter({ subsets: ["latin"] });
+const notoNastaliq = Noto_Nastaliq_Urdu({ 
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-urdu",
+});
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Best Hospital in Khanpur | 24/7 Emergency & Specialist Doctors",
+  description: "Ruhan Medical Complex - Leading hospital in Khanpur, Rahim Yar Khan with expert ENT surgeons, child specialists, physicians, and radiologists. 24/7 emergency services available.",
+  path: "/",
+  keywords: [
+    "best hospital khanpur",
+    "hospital rahim yar khan",
+    "ENT specialist khanpur",
+    "child specialist khanpur",
+    "24/7 emergency hospital"
+  ]
+});
 
 export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
-    return (
-        <html lang="en">
-            <body>{children}</body>
-        </html>
-    )
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={notoNastaliq.variable}>
+      <head>
+        <HospitalSchema />
+      </head>
+      <body className={`${inter.className} antialiased bg-gray-50`}>
+        <EmergencyBar />
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
 }

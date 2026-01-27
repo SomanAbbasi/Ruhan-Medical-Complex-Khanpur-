@@ -15,17 +15,13 @@ import {
 import { doctors, hospitalInfo } from "@/data/doctors";
 import { DoctorSchema } from "@/components/DoctorSchema";
 
-interface DoctorPageProps {
-  params: { slug: string };
-}
-
 export async function generateStaticParams() {
   return doctors.map((doctor) => ({
     slug: doctor.slug,
   }));
 }
 
-export async function generateMetadata({ params }: DoctorPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const doctor = doctors.find((d) => d.slug === params.slug);
   
   if (!doctor) {
@@ -69,7 +65,7 @@ export async function generateMetadata({ params }: DoctorPageProps): Promise<Met
   };
 }
 
-export default function DoctorPage({ params }: DoctorPageProps) {
+export default function DoctorPage({ params }: { params: { slug: string } }) {
   const doctor = doctors.find((d) => d.slug === params.slug);
 
   if (!doctor) {

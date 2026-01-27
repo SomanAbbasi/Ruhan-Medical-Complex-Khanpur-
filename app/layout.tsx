@@ -49,7 +49,7 @@ export default function RootLayout({
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ruhanmedicalcomplex.com/" />
-        <meta property="og:image" content="https://ruhanmedicalcomplex.com/share.png" />
+        <meta property="og:image" content="https://ruhanmedicalcomplex.com/logo1.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -58,7 +58,7 @@ export default function RootLayout({
           name="twitter:description"
           content="Leading hospital in Khanpur with expert specialist doctors and 24/7 emergency."
         />
-        <meta name="twitter:image" content="https://ruhanmedicalcomplex.com/share.png" />
+        <meta name="twitter:image" content="https://ruhanmedicalcomplex.com/logo1.png" />
       </head>
 
       <body className={`${inter.className} antialiased bg-gray-50`}>

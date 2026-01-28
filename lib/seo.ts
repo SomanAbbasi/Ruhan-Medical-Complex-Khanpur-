@@ -1,10 +1,16 @@
-
-export function title(t: string) {
-  return `${t} | Rohan Medical`;
-}
 import { Metadata } from "next";
 import { hospitalInfo } from "@/data/doctors";
 
+/* --------------------------------------------------
+   Helper: Title Formatter
+-------------------------------------------------- */
+export function title(t: string) {
+  return `${t} | Ruhan Medical Complex`;
+}
+
+/* --------------------------------------------------
+   Types
+-------------------------------------------------- */
 interface GenerateMetadataProps {
   title: string;
   description: string;
@@ -13,18 +19,24 @@ interface GenerateMetadataProps {
   ogImage?: string;
 }
 
+/* --------------------------------------------------
+   MAIN SEO GENERATOR (FIXED DOMAIN)
+-------------------------------------------------- */
 export function generateSEOMetadata({
   title,
   description,
   path,
   keywords = [],
-  ogImage = "/og-image.jpg"
+  ogImage = "https://ruhanmedicalcomplex.com/logo1.png",
 }: GenerateMetadataProps): Metadata {
-  const url = `https://ruhanmedical.com${path}`;
-  
+  const BASE_URL = "https://ruhanmedicalcomplex.com";
+  const url = `${BASE_URL}${path}`;
+
   return {
+    /*  BASIC SEO */
     title: `${title} | Ruhan Medical Complex`,
-    description: description,
+    description,
+
     keywords: [
       "hospital",
       "Khanpur",
@@ -32,16 +44,21 @@ export function generateSEOMetadata({
       "Pakistan",
       "medical complex",
       "doctor",
-      ...keywords
+      ...keywords,
     ],
-    metadataBase: new URL("https://ruhanmedical.com"),
+
+    /*  FORCE CORRECT DOMAIN */
+    metadataBase: new URL(BASE_URL),
+
     alternates: {
       canonical: url,
     },
+
+    /*  OPEN GRAPH (WHATSAPP / FB / LINK PREVIEW FIX) */
     openGraph: {
-      title: title,
-      description: description,
-      url: url,
+      title,
+      description,
+      url,
       siteName: hospitalInfo.name,
       locale: "en_PK",
       type: "website",
@@ -54,13 +71,16 @@ export function generateSEOMetadata({
         },
       ],
     },
+
+    /*  TWITTER / X */
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
+      title,
+      description,
       images: [ogImage],
     },
-  
+
+    /*  CRAWLING CONTROL */
     robots: {
       index: true,
       follow: true,

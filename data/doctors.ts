@@ -65,11 +65,11 @@ export const doctors: Doctor[] = [
     specialtyEn: "General Surgeon",
     specialtyUrdu: "جنرل سرجن",
     detailsEn: [
-      "MBBS - FCP (Surgery)",
+      "MBBS - FCPS (Surgery)",
       "Former Registrar Sargodha Medical College Sargodha"
     ],
     detailsUrdu: [
-      "ایم بی بی ایس, ایف سی پی (سرجری)",
+      "ایم بی بی ایس, ایف سی پی ایس (سرجری)",
       "سابق رجسٹرار سرگودھا مڈیکل کالج سرگودھا"
     ],
     timings: [

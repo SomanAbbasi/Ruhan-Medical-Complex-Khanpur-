@@ -86,6 +86,7 @@ export function Footer() {
                   href="https://www.somanabbasi.tech/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit Soman Abbasi's website"
                   className="font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent"
                 >
                   Soman Abbasi

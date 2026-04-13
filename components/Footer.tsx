@@ -82,9 +82,15 @@ export function Footer() {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full">
                 <span className="text-sm text-gray-400">Powered by</span>
-                <span className="font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
+                <a
+                  href="https://www.somanabbasi.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Soman Abbasi's website"
+                  className="font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent"
+                >
                   Soman Abbasi
-                </span>
+                </a>
               </div>
             </div>
           </div>
